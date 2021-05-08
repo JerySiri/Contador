@@ -1,16 +1,44 @@
 ﻿@page "/counter"
 
-<h1>Counter</h1>
+<h2>Contador</h2>
 
-<p>Current count: @currentCount</p>
+<p></p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<h2>Incremento de 1</h2>
+<p>Contador 1: @currentCount</p>
+<button class="btn btn-primary" @onclick="IncrementCount">Incremento</button>
+
+<p></p>
+
+<h2>Incremento Multiplicando</h2>
+<p>Contador 2: @currentCountMult</p>
+<button class="btn btn-primary" @onclick="IncrementCountMult">Incremento</button>
+
+<p></p>
+
+<h2>Incremento de 3</h2>
+<p>Contador 3: @currentCount3</p>
+<button class="btn btn-primary" @onclick="IncrementCount3">Incremento</button>
 
 @code {
     private int currentCount = 0;
+    private int currentCountMult = 0;
+    private int currentCount3 = 0;
 
     private void IncrementCount()
     {
         currentCount++;
+    }
+
+    private void IncrementCountMult()
+    {
+        currentCountMult *= 2;
+        if (currentCountMult == 0)
+            currentCountMult = 1;
+    }
+
+    private void IncrementCount3()
+    {
+        currentCount3 += 3;
     }
 }
